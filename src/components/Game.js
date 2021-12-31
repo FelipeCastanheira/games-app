@@ -15,7 +15,6 @@ export class Game extends React.Component {
 
     this.state = {
       slide: 0,
-      currClass: 'container slide0',
     }
 
     this.handleLeft = this.handleLeft.bind(this);
@@ -24,26 +23,34 @@ export class Game extends React.Component {
 
   handleLeft() {
     const newSlide = this.state.slide === 0? 2: this.state.slide - 1;
+    const body = document.querySelector('body');
+    const carousel = document.querySelector('.carousel');
+    const container = document.querySelector('.container');
+    container.style.transform = `translateX(${-newSlide * carousel.offsetWidth}px)`;
+    body.style.backgroundColor = games[newSlide].color;
   
     this.setState((state) => ({
       slide: newSlide,
-      currClass: `container slide${newSlide}`
     }))
   }
 
   handleRight() {
     const newSlide = this.state.slide === 2? 0: this.state.slide + 1;
+    const body = document.querySelector('body');
+    const carousel = document.querySelector('.carousel');
+    const container = document.querySelector('.container');
+    container.style.transform = `translateX(${-newSlide * carousel.offsetWidth}px)`;
+    body.style.backgroundColor = games[newSlide].color;
   
     this.setState((state) => ({
       slide: newSlide,
-      currClass: `container slide${newSlide}`
     }))
   }
 
   render() {
     return (
       <main>
-        <div className={this.state.currClass}>
+        <div className="container">
           {games.map((game) => (
             <div className="carousel" key={game.txt}>
               <img src={game.src} className={game.color} alt={game.txt} />
