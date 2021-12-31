@@ -67,7 +67,7 @@ button {
 }
 
 button:hover {
-  color: black;
+  color: rgb(19, 18, 26);
   font-size: 4.5rem;
 }
 
