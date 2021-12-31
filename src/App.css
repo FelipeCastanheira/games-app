@@ -20,6 +20,47 @@ header i {
 main {
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 85vh;
+  width: 100vw;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: 0.4s;
+}
+
+.slide0 {
+  transform: translateX(0);
+}
+
+.slide1 {
+  transform: translateX(-901px);
+}
+
+.slide2 {
+  transform: translateX(-1802px);
+}
+
+.carousel {
+  width: 100vw;
+  text-align: center;
+}
+
+.carousel img {
+  object-fit: cover;
+  height: 450px;
+  width: 450px;
 }
 
 main h3 {
@@ -32,6 +73,7 @@ button {
   color: rgba(0, 0, 0, 0.561);
   border: none;
   font-size: 4rem;
+  cursor: pointer;
 }
 
 .move-left {
