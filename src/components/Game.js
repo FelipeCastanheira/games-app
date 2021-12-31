@@ -7,7 +7,7 @@ const games = [
   {src: xbox, txt: 'Os melhores jogos', color: '#FBFE29'},
   {src: ball, txt: 'Diversão garantida', color: 'white'},
   {src: gameboy, txt: 'Todos os dias', color: '#EAAAAB'},
-]
+];
 
 export class Game extends React.Component {
   constructor() {
